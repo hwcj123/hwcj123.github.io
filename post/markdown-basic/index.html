@@ -1,111 +1,112 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>「转载」献给写作者的 Markdown 新手指南 | 安九九的小站</title>
-<meta name="description" content="无意路过，喝杯茶再走">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://hwcj123.github.io/favicon.ico?v=1583830384291">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://hwcj123.github.io/favicon.ico?v=1583830738735">
 <link rel="stylesheet" href="https://hwcj123.github.io/styles/main.css">
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="「简书」作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:
+
+『为什么作家应该用 Markdown 保存自己的文稿』
+..." />
+    <meta name="keywords" content="markdown" />
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://hwcj123.github.io">
-        <img class="avatar" src="https://hwcj123.github.io/images/avatar.png?v=1583830384291" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://hwcj123.github.io">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://hwcj123.github.io">
+        <img src="https://hwcj123.github.io/images/avatar.png?v=1583830738735" class="site-logo">
         <h1 class="site-title">安九九的小站</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="/archives" class="menu purple-link">
+          <a href="/archives" class="site-nav">
             归档
           </a>
         
       
         
-          <a href="/tags" class="menu purple-link">
+          <a href="/tags" class="site-nav">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="menu purple-link">
+          <a href="/post/about" class="site-nav">
             关于
           </a>
         
       
         
-          <a href="/xiaogege" class="menu purple-link">
+          <a href="/xiaogege" class="site-nav">
             串门
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      无意路过，喝杯茶再走
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwcj123.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        <div class="post-detail">
-          
-            <div class="feature-container" style="background-image: url('https://hwcj123.github.io/post-images/markdown-basic.jpg')">
-            </div>
-          
-          <h2 class="post-title">「转载」献给写作者的 Markdown 新手指南</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-03-10</span>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">「转载」献给写作者的 Markdown 新手指南</h2>
+            <div class="post-date">2020-03-10</div>
             
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://hwcj123.github.io/tag/5L_lltgMe/">
-                    markdown
-                    
-                  </a>
-                
-              </span>
+              <div class="feature-container" style="background-image: url('https://hwcj123.github.io/post-images/markdown-basic.jpg')">
+              </div>
             
-          </div>
-          <div class="post-content">
-            <p>「简书」作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:</p>
+            <div class="post-content" v-pre>
+              <p>「简书」作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:</p>
 <ul>
 <li><a href="https://www.jianshu.com/p/qqGjLN">『为什么作家应该用 Markdown 保存自己的文稿』</a></li>
 <li><a href="https://www.jianshu.com/p/PpDNMG">『Markdown写作浅谈』</a></li>
@@ -271,37 +272,30 @@ baz | baz  | baz
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 </blockquote>
 
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://hwcj123.github.io/tag/5L_lltgMe/" class="tag">
+                    markdown
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
           </div>
+
         </div>
-
-        
       </div>
-
-      
-
-      <div class="site-footer">
-  <div class="slogan">无意路过，喝杯茶再走</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwcj123.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -311,6 +305,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 
