@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>「转载」优酷视频DRM下载教程 | 安九九的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://hwcj123.github.io/favicon.ico?v=1583920207947">
+<link rel="stylesheet" href="https://hwcj123.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="目前只提供两种加密的解密方案
+普通加密
+普通加密情况，使用下面的JS代码获取到解密所需KEY，使用GUI填入对应参数即可解密下载
+javascript:eval(function(p,a,c,k,e,d){e=function(c){ret..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://hwcj123.github.io">
+        <img src="https://hwcj123.github.io/images/avatar.png?v=1583920207947" class="site-logo">
+        <h1 class="site-title">安九九的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+        
+          <a href="/xiaogege" class="site-nav">
+            串门
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      给阿姨到贝卡布奇诺
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://hwcj123.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">「转载」优酷视频DRM下载教程</h2>
+            <div class="post-date">2020-03-11</div>
+            
+              <div class="feature-container" style="background-image: url('https://hwcj123.github.io/post-images/deyk1.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>目前只提供两种加密的解密方案</p>
+<h1 id="普通加密">普通加密</h1>
+<p>普通加密情况，使用下面的JS代码获取到解密所需KEY，使用<a href="https://github.com/nilaoda/N_m3u8DL-CLI">GUI</a>填入对应参数即可解密下载</p>
+<pre><code>javascript:eval(function(p,a,c,k,e,d){e=function(c){return(c&lt;a?&quot;&quot;:e(parseInt(c/a)))+((c=c%a)&gt;35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3:4(2(0.1.8(9,7 5(6))));',10,10,'String|fromCharCode|btoa|javascript|alert|Uint8Array|____hexA|new|apply|null'.split('|'),0,{}))
+</code></pre>
+<p><img src="https://hwcj123.github.io/post-images/1583918353296.png" alt="" loading="lazy"><br>
+<img src="https://hwcj123.github.io/post-images/1583918362931.png" alt="" loading="lazy"><br>
+<img src="https://hwcj123.github.io/post-images/1583918368711.png" alt="" loading="lazy"></p>
+<h1 id="cmaf格式">cmaf格式</h1>
+<p>例如：<a href="https://v.youku.com/v_show/id_XNDM1Nzg4MzQ4MA==.html">https://v.youku.com/v_show/id_XNDM1Nzg4MzQ4MA==.html</a></p>
+<p>使用JS代码获取的m3u8中，type为cmaf4hd3</p>
+<pre><code>http://pl-ali.youku.com/playlist/m3u8?vid=XNDM1Nzg4MzQ4MA%3D%3D&amp;type=cmaf4hd3&amp;...
+</code></pre>
+<p>观察可知，m3u8中有音频和视频两个轨道</p>
+<p>然后音频和视频两个m3u8中，又分别包含map文件</p>
+<p>需要做的就是将两个m3u8中的文件(包括map)都下载下来，然后使用copy /b将它们合并<br>
+（该过程在 N_m3u8DL-CLI v2.5.0及以后的版本中将被自动处理）：<br>
+<img src="https://hwcj123.github.io/post-images/1583918528974.png" alt="" loading="lazy"></p>
+<h2 id="解密过程">解密过程：</h2>
+<p><strong>获取 key</strong> 在浏览器播放页面执行以下js代码 [<a href="https://stackoverflow.com/questions/40031688/javascript-arraybuffer-to-hex">ref</a>]：</p>
+<pre><code>javascript:var a=prompt(&quot;key&quot;,Array.prototype.map.call(_drmKey3, n =&gt; (&quot;00&quot; + n.toString(16)).slice(-2)).join(&quot;&quot;));
+</code></pre>
+<p>复制留存备用</p>
+<h2 id="获取视频文件kid">获取视频文件KID</h2>
+<p>在视频目录执行以下命令</p>
+<pre><code>&gt; mp4dump.exe &quot;蜘蛛侠：英雄远征_02.06.51.mp4&quot; | find /I &quot;default_KID&quot;
+                    default_KID = [33 41 90 a8 5a 5e 8d 0a 72 ab b9 53 08 cc 0f e5]
+</code></pre>
+<p>则KID为33 41 90 a8 5a 5e 8d 0a 72 ab b9 53 08 cc 0f e5</p>
+<h2 id="解密视频">解密视频</h2>
+<pre><code>&gt; mp4decrypt.exe --show-progress --key 334190a85a5e8d0a72abb95308cc0fe5:b70c5f126704b3d29cccbc87a800d1d7  &quot;蜘蛛侠：英雄远征_02.06.51.mp4&quot; video.mp4
+</code></pre>
+<h2 id="解密音频">解密音频</h2>
+<pre><code>&gt; mp4decrypt.exe --show-progress --key 334190a85a5e8d0a72abb95308cc0fe5:b70c5f126704b3d29cccbc87a800d1d7  &quot;蜘蛛侠：英雄远征_02.06.51(Audio).mp4&quot; audio.mp4
+</code></pre>
+<h2 id="混流">混流</h2>
+<pre><code>&gt; ffmpeg -i video.mp4 -i audio.mp4 -map 0 -map 1 -c copy mux.mp4
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://hwcj123.github.io/post-images/1583919431664.png" alt="233" title="233" loading="lazy"></figure>
+<blockquote>
+<p>附： <a href="http://zebulon.bok.net/Bento4/binaries/Bento4-SDK-1-5-1-629.x86-microsoft-win32-vs2010.zip">http://zebulon.bok.net/Bento4/binaries/Bento4-SDK-1-5-1-629.x86-microsoft-win32-vs2010.zip</a></p>
+</blockquote>
+<blockquote>
+<p>转自于<em>nilaoda</em>，鸣谢！</p>
+</blockquote>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://hwcj123.github.io/post/markdown-basic/">
+                  <h3 class="post-title">
+                    「转载」献给写作者的 Markdown 新手指南
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
